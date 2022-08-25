@@ -22,22 +22,22 @@ class clientController extends Controller
                 ->take(4)
                 ->get();
         $ARTIS =  BeritaModel::orderBy('created_at','DESC')
-                    ->where('kategori_id',2)
+                    ->where('kategori_id',1)
                     ->where('status','aktif')
                     ->take(4)
                     ->get();
         $FILM =  BeritaModel::orderBy('created_at','DESC')
-                    ->where('kategori_id',3)
+                    ->where('kategori_id',2)
                     ->where('status','aktif')
                     ->take(4)
                     ->get();
         $MUSIK =  BeritaModel::orderBy('created_at','DESC')
-                    ->where('kategori_id',4)
+                    ->where('kategori_id',3)
                     ->where('status','aktif')
                     ->take(4)
                     ->get();
         $TRENDING =  BeritaModel::orderBy('created_at','DESC')
-                    ->where('kategori_id',5)
+                    ->where('kategori_id',4)
                     ->where('status','aktif')
                     ->take(4)
                     ->get();

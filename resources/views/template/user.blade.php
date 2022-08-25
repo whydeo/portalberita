@@ -12,8 +12,8 @@
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="{{route('user.show')}}">HOME</a></li>
-      <li><a href="{{route('user.list_news',2)}}">ARTIS</a></li>
-      <li><a href="{{route('user.list_news',3)}}">FILM</a></li>
+      <li><a href="{{route('user.list_news',1)}}">ARTIS</a></li>
+      <li><a href="{{route('user.list_news',2)}}">FILM</a></li>
       <!-- <li class="dropdown">
       	<a href="#" data-toggle="dropdown" class="dropdown-toggle">
       		FILM <span class="caret"></span>
@@ -25,8 +25,8 @@
       		<li><a href="{{route('user.list_news',10)}}">INDONESIA</a></li>
       	</ul>
       </li> -->
-      <li><a href="{{route('user.list_news',4)}}">MUSIK</a></li>
-      <li><a href="{{route('user.list_news',5)}}">TRENDING</a></li>
+      <li><a href="{{route('user.list_news',3)}}">MUSIK</a></li>
+      <li><a href="{{route('user.list_news',4)}}">TRENDING</a></li>
       <!-- <li><a href="{{route('user.list_news',11)}}">FOTO</a></li> -->
     </ul>
     <ul class="nav navbar-nav navbar-right">
