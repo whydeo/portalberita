@@ -20,32 +20,32 @@
 </div>
 <div class="row">
 	<div class="col-md-8">
-		<b class="label label-info"><b>EKONOMI NEWS</b></b>
+		<b class="label label-info"><b>ARTIS</b></b>
 		<hr>
 		<div class="panel">
 			<div class="panel">
-				<!-- ekonomi -->
+				<!-- ARTIS -->
 					<br>
-				@foreach ($ekonomi as $e)
+				@foreach ($ARTIS as $artis)
 					<div class="row">
-						<a href="{{route('user.show_news',$e->id)}}" style="color:black">
+						<a href="{{route('user.show_news',$artis->id)}}" style="color:black">
 							<div class="col-md-3">
-								<img style="width: 100px;height: 100px;margin: 25px" class="img-rounded img-responsive" src="{{asset('foto/'.$e->foto)}}">
+								<img style="width: 100px;height: 100px;margin: 25px" class="img-rounded img-responsive" src="{{asset('foto/'.$artis->foto)}}">
 							</div>
 							<div class="col-md-9">
-								<h4>{{$e->judul}}</h4>
-							  	<p><b>{{$e->author}} {{$e->tanggal}} </b></p>
+								<h4>{{$artis->judul}}</h4>
+							  	<p><b>{{$artis->author}} {{$artis->tanggal}} </b></p>
 							  	<p>{{substr($s->isi,0,100)}}</p>
 							</div>
 						</a>
 					</div>
 				@endforeach
 			</div>
-			<!-- olahraga -->
+			<!-- FILM -->
 			<br>
-			<b class="label label-info"><b>OLAHRAGA NEWS</b></b>
+			<b class="label label-info"><b>FILM</b></b>
 			<hr>
-			@foreach($olahraga as $o)
+			@foreach($FILM as $o)
 				<div class="row">
 					<a href="{{route('user.show_news',$o->id)}}" style="color: black">
 						<div class="col-md-3">
@@ -59,11 +59,11 @@
 					</a>
 				</div>
 			@endforeach
-			<!-- politik -->
+			<!-- MUSIK -->
 			<br>
-			<b class="label label-info"><b>POLITIK NEWS</b></b>
+			<b class="label label-info"><b>MUSIK</b></b>
 			<hr>
-			@foreach($politik as $p)
+			@foreach($MUSIK as $p)
 			<div class="row">
 				<a href="{{route('user.show_news',$p->id)}}" style="color: black">
 					<div class="col-md-3">
@@ -77,20 +77,20 @@
 				</a>
 			</div>
 			@endforeach
-			<!-- tekonologi -->
+			<!-- TRENDING -->
 			<br>
-			<b class="label label-info"><b>TEKNOLOGI NEWS</b></b>
+			<b class="label label-info"><b>TRENDING</b></b>
 			<hr>
-			@foreach($tekno as $tek)
+			@foreach($TRENDING as $tren)
 			<div class="row">
-				<a href="{{route('user.show_news',$tek->id)}}" style="color: black">
+				<a href="{{route('user.show_news',$tren->id)}}" style="color: black">
 					<div class="col-md-3">
-						<img style="width: 100px;height: 100px;margin: 25px" class="img-rounded img-responsive" src="{{asset('foto/'.$tek->foto)}}">
+						<img style="width: 100px;height: 100px;margin: 25px" class="img-rounded img-responsive" src="{{asset('foto/'.$tren->foto)}}">
 					</div>
 					<div class="col-md-9">
-						<h4>{{$tek->judul}}</h4>
-						 <p><b>{{$tek->author}} {{$tek->tanggal}}</b></p>
-						 <p>{{substr($tek->isi,0,100)}}</p>
+						<h4>{{$tren->judul}}</h4>
+						 <p><b>{{$tren->author}} {{$tren->tanggal}}</b></p>
+						 <p>{{substr($tren->isi,0,100)}}</p>
 					</div>
 				</a>
 			</div>

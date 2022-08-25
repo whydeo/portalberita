@@ -3,9 +3,9 @@
 <h1 class="text-center">Kategori</h1>
 <br>
 <div class="row">
-	<div class="col-md-8">
+	<!-- <div class="col-md-8">
 		<button class="btn btn-info" data-toggle="modal" data-target="#modal">TAMBAH</button>
-	</div>
+	</div> -->
 	<div class="col-md-4">
 		<form action="{{route('user.carikategori')}}" method="post">
 			{{csrf_field()}}
@@ -36,7 +36,7 @@
 		<td>{{$d->status}}</td>
 		<td>{{$d->tanggal}}</td>
 		<td>
-			<a href="{{route('user.hapus_kategori',$d->id)}}" onclick="return confirm('Hapus Data.?')" class="btn btn-warning btn-sm">HAPUS</a>
+			<!-- <a href="{{route('user.hapus_kategori',$d->id)}}" onclick="return confirm('Hapus Data.?')" class="btn btn-warning btn-sm">HAPUS</a> -->
 			<a href="{{route('user.edit_kategori',$d->id)}}" class="btn btn-info btn-sm">EDIT</a>
 		</td>
 	</tr>

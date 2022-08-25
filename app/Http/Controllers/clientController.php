@@ -21,23 +21,23 @@ class clientController extends Controller
                 ->where('status','aktif')
                 ->take(4)
                 ->get();
-        $ekonomi =  BeritaModel::orderBy('created_at','DESC')
+        $ARTIS =  BeritaModel::orderBy('created_at','DESC')
+                    ->where('kategori_id',2)
+                    ->where('status','aktif')
+                    ->take(4)
+                    ->get();
+        $FILM =  BeritaModel::orderBy('created_at','DESC')
+                    ->where('kategori_id',3)
+                    ->where('status','aktif')
+                    ->take(4)
+                    ->get();
+        $MUSIK =  BeritaModel::orderBy('created_at','DESC')
                     ->where('kategori_id',4)
                     ->where('status','aktif')
                     ->take(4)
                     ->get();
-        $olahraga =  BeritaModel::orderBy('created_at','DESC')
+        $TRENDING =  BeritaModel::orderBy('created_at','DESC')
                     ->where('kategori_id',5)
-                    ->where('status','aktif')
-                    ->take(4)
-                    ->get();
-        $politik =  BeritaModel::orderBy('created_at','DESC')
-                    ->where('kategori_id',6)
-                    ->where('status','aktif')
-                    ->take(4)
-                    ->get();
-        $tekno =  BeritaModel::orderBy('created_at','DESC')
-                    ->where('kategori_id',7)
                     ->where('status','aktif')
                     ->take(4)
                     ->get();
@@ -47,7 +47,7 @@ class clientController extends Controller
                     ->take(8)
                     ->get();
         $about = TentangModel::find(1);
-        return view('user.dasboard',compact('semua','ekonomi','olahraga','politik','tekno','tops','about')) ;
+        return view('user.dasboard',compact('semua','ARTIS','FILM','MUSIK','TRENDING','tops','about')) ;
     }
 
     /**
@@ -85,11 +85,8 @@ class clientController extends Controller
                 ->where('status','aktif')
                 ->take(6)
                 ->get();
-        $komen = KomentarModel::orderBy('created_at','DESC')
-                ->where('berita_id',$id)
-                ->where('status','aktif')
-                ->get();
-        return view('user.detail',compact('about','news','semua','komen'));
+   
+        return view('user.detail',compact('about','news','semua'));
     }
 
     /**
@@ -110,25 +107,25 @@ class clientController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        $komen = new KomentarModel;
-        $komen->nama = $request->nama;
-        $komen->email = $request->email;
-        $komen->keterangan = $request->isi;
-        $komen->tanggal = date('Y-m-d');
-        $komen->status = 'aktif';
-        $komen->berita_id = $id;
-        $komen->save();
+    // public function update(Request $request, $id)
+    // {
+    //     $komen = new KomentarModel;
+    //     $komen->nama = $request->nama;
+    //     $komen->email = $request->email;
+    //     $komen->keterangan = $request->isi;
+    //     $komen->tanggal = date('Y-m-d');
+    //     $komen->status = 'aktif';
+    //     $komen->berita_id = $id;
+    //     $komen->save();
 
-        if ($komen) {
-            Session::flash('success','Komentar berhasil ditamahkan');
-            return redirect()->back();
-        } else {
-            Session::flash('success','Komentar gagal ditamahkan');
-            return redirect()->back();
-        }
-    }
+    //     if ($komen) {
+    //         Session::flash('success','Komentar berhasil ditamahkan');
+    //         return redirect()->back();
+    //     } else {
+    //         Session::flash('success','Komentar gagal ditamahkan');
+    //         return redirect()->back();
+    //     }
+    // }
 
     /**
      * Remove the specified resource from storage.
@@ -148,22 +145,22 @@ class clientController extends Controller
                 ->where('status','aktif')
                 ->take(6)
                 ->get();
-        $ekonomi =  BeritaModel::orderBy('created_at','DESC')
+        $ARTIS =  BeritaModel::orderBy('created_at','DESC')
                     ->where('kategori_id',$id)
                     ->where('status','aktif')
                     ->get();
-        return view('user.list',compact('about','semua','ekonomi')) ;
+        return view('user.list',compact('about','semua','ARTIS')) ;
     }
 
     public function cari(Request $request)
     {
         $key = $request->get('cari');
-        $ekonomi = BeritaModel::where('judul','LIKE','%'.$key.'%')->get();
+        $ARTIS = BeritaModel::where('judul','LIKE','%'.$key.'%')->get();
         $about = TentangModel::find(1);
         $semua = BeritaModel::orderBy('created_at','DESC')
                 ->where('status','aktif')
                 ->take(6)
                 ->get();
-        return view('user.list',compact('about','ekonomi','semua')) ;
+        return view('user.list',compact('about','ARTIS','semua')) ;
     }
 }

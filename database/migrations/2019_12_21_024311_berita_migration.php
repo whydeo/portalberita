@@ -35,6 +35,7 @@ class BeritaMigration extends Migration
      */
     public function down()
     {
-        $table::dropIfExistsp('berita');
+        Schema::dropIfExists('berita');
+
     }
 }

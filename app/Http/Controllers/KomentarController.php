@@ -19,7 +19,6 @@ class KomentarController extends Controller
         return view('admin.komentar',compact('komen')) ;
     }
 
-
     /**
      * Show the form for creating a new resource.
      *

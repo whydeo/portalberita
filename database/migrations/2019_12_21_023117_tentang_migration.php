@@ -15,7 +15,7 @@ class TentangMigration extends Migration
     {
         Schema::create('about', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('tentang');
+            $table->string('tentang',5000);
             $table->string('kontak');
             $table->string('alamat');
             $table->string('email');

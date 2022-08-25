@@ -25,14 +25,13 @@
     <link href="{{asset('css/theme.css')}} " rel="stylesheet" media="all">
 
 </head>
-
 <body>
     <div class="page-wrapper">
         <!-- MENU SIDEBAR-->
-        <aside class="menu-sidebar d-none d-lg-block">
+        <aside class="menu-sidebar ">
             <div class="logo">
                 <a href="#">
-                    <img src="{{asset('images/icon/logo.png')}}" alt="Cool Admin" />
+                    <img src="{{asset('images/icon/logo.png')}}" alt="portal berita" />
                 </a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">
@@ -50,18 +49,12 @@
                             <a href="{{route('user.kategori')}}">
                                 <i class="fas fa-chart-bar"></i>Kategori</a>
                         </li>
-                         <li>
-                            <a href="{{route('user.komen')}}">
-                                <i class="fas fa-chart-bar"></i>Komentar</a>
-                        </li>
+                     
                         <li>
                             <a href="{{route('user.about')}}">
                                 <i class="fas fa-chart-bar"></i>About</a>
                         </li>
-                        <li>
-                            <a href="{{route('user.logout')}}">
-                                <i class="fas fa-chart-bar"></i>Logout</a>
-                        </li>
+                        
                     </ul>
                 </nav>
             </div>
@@ -73,27 +66,20 @@
             <!-- HEADER DESKTOP-->
             <header class="header-desktop">
                 <div class="section__content section__content--p30">
-                    <div class="container-fluid">
+                    <div class="container">
                         <div class="header-wrap">
                             <form class="form-header" action="" method="POST">
                             </form>
                             <div class="header-button">
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">
-                                        <div class="content">
-                                            <a class="js-acc-btn" href="#">john doe</a>
-                                        </div>
-                                        <div class="account-dropdown js-dropdown">
-                                            <div class="account-dropdown__body">
-                                                <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-settings"></i>Setting</a>
-                                                </div>
-                                            </div>
-                                            <div class="account-dropdown__footer">
+                                    <div class="account-dropdown__footer">
                                                 <a href="{{route('user.logout')}}">
-                                                    <i class="zmdi zmdi-power"></i>Logout</a>
+                                                    <i class="zmdi zmdi-power"></i>{{ Auth::user()->name }}</a>
                                             </div>
+                                        <div class="account-dropdown js-dropdown">
+                                            
+                                            
                                         </div>
                                     </div>
                                 </div>

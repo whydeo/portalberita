@@ -15,7 +15,6 @@
 Route::get('/','clientController@index')->name('user.show');
 Route::post('/user/news/cariberita','clientController@cari')->name('user.cr_berita');
 Route::get('/user/news/{id}','clientController@show')->name('user.show_news');
-Route::post('/user/news/{id}','clientController@update')->name('user.komentar_news');
 Route::get('/user/list/{id}','clientController@list')->name('user.list_news');
 Route::get('/wp-admin','LoginController@index')->name('user.login');
 Route::post('/wp-admin','LoginController@do_login')->name('login');
@@ -39,9 +38,6 @@ Route::group(['middleware'=>'auth'],function(){
 	Route::post('/user/berita/cari','BeritaController@cari')->name('user.cari_berita');
 	Route::get('/user/about','AboutController@index')->name('user.about');
 	Route::post('/user/about/edit/{id}','AboutController@update')->name('user.edit_about');
-	Route::get('/komentar','KomentarController@index')->name('user.komen');
-	Route::get('/user/detail_komen/{id}','KomentarController@show')->name('user.edit_komen');
-	Route::post('/user/edit_komen/{id}','KomentarController@update')->name('user.do_editkomen');
-	Route::get('/user/hapus_komen/{id}','KomentarController@destroy')->name('user.hapus_komen');
+	
 });
 

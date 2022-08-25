@@ -6,8 +6,8 @@
 		<hr>
 		<div class="panel">
 			<div class="panel">
-				<!-- ekonomi -->
-				@foreach ($ekonomi as $e)
+				<!-- ARTIS -->
+				@foreach ($ARTIS as $e)
 					<div class="row">
 						<a href="{{route('user.show_news',$e->id)}}" style="color:black">
 							<div class="col-md-3">
